@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { font-family: sans-serif; text-align: center; padding:
+50px; background: #ffeaa7; }
+input { padding: 10px; margin: 10px; border-radius: 5px;
+border: 1px solid #ccc; }
+button { padding: 10px 20px; background: #ff7675; color:
+white; border: none; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1>🏆 Hackathon Team Name Generator</h1>
+<!-- Method="POST" tells the form to send data securely to Python
+-->
+<form method="POST">
+<input type="text" name="user_color" placeholder="Favorite
+Color" required>
+<input type="text" name="user_animal" placeholder="Favorite
+Animal" required>
+<button type="submit">Generate Name</button>
+</form>
+<!-- Only show this block if Python sent a name back -->
+{% if final_name %}
+<h1>Your Team is:</h1>
+<h2 style="color: #d63031; font-size: 3em;">{{ final_name
+}}</h2>
+{% endif %}
+</body>
+</html>
